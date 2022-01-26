@@ -15,7 +15,7 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'TheDawnCc', // Usually your GitHub org/user name.
   projectName: 'TheDawnCc.github.io', // Usually your repo name.
-  trailingSlash : false ,
+  trailingSlash : false,
 
   presets: [
     [
