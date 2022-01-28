@@ -9,8 +9,7 @@ pipeline {
   stages {
     stage('error') {
       steps {
-        input 'test'
-        sh 'scp -r -v /var/jenkins_home/workspace/angular-rss-reader_main/dist/ root@100.42.64.222:/var/www/'
+        sh 'sshpass -p 19vTbOZRkmrB38TX scp -r -v /var/jenkins_home/workspace/angular-rss-reader_main/dist/ root@100.42.64.222:/var/www/'
       }
     }
 
