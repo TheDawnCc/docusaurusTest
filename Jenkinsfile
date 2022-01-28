@@ -9,8 +9,8 @@ pipeline {
   stages {
     stage('error') {
       steps {
-        sh '''su root
-scp -r -v /var/jenkins_home/workspace/angular-rss-reader_main/dist/ root@100.42.64.222:/var/www/'''
+        input 'test'
+        sh 'scp -r -v /var/jenkins_home/workspace/angular-rss-reader_main/dist/ root@100.42.64.222:/var/www/'
       }
     }
 
