@@ -3,7 +3,7 @@ pipeline {
     docker {
       image 'node:14'
       args '''-p 3000:3000
--v /home:/home'''
+-v C:\\Users\\qiaoxh2\\home:/home'''
     }
 
   }
