@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage('SSH') {
       steps {
-        sh '''mkdir ~/.ssh
+        sh '''ssh-keygen -t rsa -P "" -f ~/.ssh/id_rsa
 cp /var/jenkins_home/.ssh/id_rsa ~/.ssh/id_rsa
 cp /var/jenkins_home/.ssh/id_rsa.pub ~/.ssh/id_rsa.pub
 cp /var/jenkins_home/.ssh/known_hosts ~/.ssh/known_hosts'''
