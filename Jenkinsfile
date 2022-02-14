@@ -16,7 +16,6 @@ cp /var/jenkins_home/.ssh/id_rsa.pub ~/.ssh/id_rsa.pub
 cp /var/jenkins_home/.ssh/known_hosts ~/.ssh/known_hosts'''
         sh 'npm install'
         input 'test'
-        sh 'sshpass -p 19vTbOZRkmrB38TX scp -r -v /var/jenkins_home/workspace/angular-rss-reader_main/dist/ root@100.42.64.222:/var/www/'
       }
     }
 
