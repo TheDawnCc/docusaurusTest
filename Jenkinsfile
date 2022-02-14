@@ -8,8 +8,10 @@ pipeline {
 
   }
   stages {
-    stage('error') {
+    stage('test') {
       steps {
+        sh '''cp /home/ssh_key/id_rsa ~/.ssh/id_rsa
+cp /home/ssh_key/id_rsa.pub ~/.ssh/id_rsa.pub'''
         input 'test'
         sh 'sshpass -p 19vTbOZRkmrB38TX scp -r -v /var/jenkins_home/workspace/angular-rss-reader_main/dist/ root@100.42.64.222:/var/www/'
       }
