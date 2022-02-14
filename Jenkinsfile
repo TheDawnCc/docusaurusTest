@@ -11,9 +11,9 @@ pipeline {
     stage('SSH') {
       steps {
         sh '''ssh-keygen -t rsa -P "" -f ~/.ssh/id_rsa
-cp /var/jenkins_home/.ssh/id_rsa ~/.ssh/id_rsa
-cp /var/jenkins_home/.ssh/id_rsa.pub ~/.ssh/id_rsa.pub
-cp /var/jenkins_home/.ssh/known_hosts ~/.ssh/known_hosts'''
+cp /home/ssh_key/id_rsa ~/.ssh/id_rsa
+cp /home/ssh_key/id_rsa.pub ~/.ssh/id_rsa.pub
+cp /home/ssh_key/known_hosts ~/.ssh/known_hosts'''
         sh 'npm install'
         input 'test'
       }
