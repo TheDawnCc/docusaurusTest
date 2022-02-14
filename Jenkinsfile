@@ -11,9 +11,9 @@ pipeline {
     stage('test') {
       steps {
         sh '''mkdir ~/.ssh
-cp /home/ssh_key/id_rsa ~/.ssh/id_rsa
-chmod 600 ~/.ssh/id_rsa
-cp /home/ssh_key/id_rsa.pub ~/.ssh/id_rsa.pub'''
+cp /var/jenkins_home/.ssh/id_rsa ~/.ssh/id_rsa
+cp /var/jenkins_home/.ssh/id_rsa.pub ~/.ssh/id_rsa.pub
+cp /var/jenkins_home/.ssh/known_hosts ~/.ssh/known_hosts'''
         input 'test'
         sh 'sshpass -p 19vTbOZRkmrB38TX scp -r -v /var/jenkins_home/workspace/angular-rss-reader_main/dist/ root@100.42.64.222:/var/www/'
       }
