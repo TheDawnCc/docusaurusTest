@@ -21,6 +21,7 @@ cp /home/ssh_key/known_hosts ~/.ssh/known_hosts'''
 
     stage('Remote') {
       steps {
+        sh 'npm build'
         sh 'scp -r -v /var/jenkins_home/workspace/docusaurusTest_main/build/ root@100.42.64.222:/var/www/'
       }
     }
