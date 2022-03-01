@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('SSH') {
       steps {
-        sh 'npm install'
+        pwsh 'npm install'
         input 'test'
       }
     }
