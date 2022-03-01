@@ -1,9 +1,7 @@
 pipeline {
   agent {
-    docker {
-      image 'node:14'
-      args '''-p 3000:3000
--v C:\\Users\\qiaoxh2\\home:/home'''
+    node {
+      label 'agent1'
     }
 
   }
