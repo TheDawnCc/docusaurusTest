@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    label 'agent1'
+  }
   stages {
     stage('SSH') {
       steps {
@@ -14,8 +16,5 @@ pipeline {
       }
     }
 
-  }
-  environment {
-    label = 'agent1'
   }
 }
