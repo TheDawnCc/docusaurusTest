@@ -12,7 +12,7 @@ pipeline {
 
     stage('Remote') {
       steps {
-        sh 'npm run build'
+        powershell 'npm run build'
       }
     }
 
