@@ -5,6 +5,8 @@ pipeline {
   stages {
     stage('SSH') {
       steps {
+        echo "${BRANCH_NAME}"
+        echo ${WORKSPACE}
         powershell  '''
         echo "${BRANCH_NAME}"
         echo ${WORKSPACE}
