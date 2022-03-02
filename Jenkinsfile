@@ -4,7 +4,7 @@ pipeline {
   }
   
   environment {
-    var1 = 'test var"
+    var1 = 'test var'
   }
   
   stages {
