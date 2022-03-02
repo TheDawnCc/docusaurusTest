@@ -5,6 +5,12 @@ pipeline {
   stages {
     stage('SSH') {
       steps {
+        powershell  '''
+        if((node -v).StartWith("v10")){
+            Write-Host "Node 10 detected...Try nvm use";
+            exit 1;
+        }
+        '''
         powershell 'npm install'
         input 'test'
       }
