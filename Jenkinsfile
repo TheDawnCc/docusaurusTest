@@ -23,16 +23,22 @@ pipeline {
             exit 1;
         }
         '''
+        
+        input 'test' 
+        
+        /*
         powershell 'npm install'
-        input 'test'
+        */
       }
     }
 
+    /*
     stage('Remote') {
       steps {
         powershell 'npm run build'
       }
     }
+    */
 
   }
 }
