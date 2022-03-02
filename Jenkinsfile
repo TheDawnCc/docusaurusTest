@@ -14,6 +14,10 @@ pipeline {
         echo "${env.WORKSPACE}"
         echo "${var1}"
         powershell  '''
+        echo "hello world"
+        if(${var1} -eq 'test var'){
+          echo 'var1 equals'
+        }
         echo "${env.BRANCH_NAME}"
         echo ${env.WORKSPACE}
         echo "${var1}"
