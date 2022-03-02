@@ -13,7 +13,7 @@ pipeline {
         echo "${env.BRANCH_NAME}"
         echo "${env.WORKSPACE}"
         echo "${var1}"
-        powershell  '''
+        powershell  """
         echo "hello world"
         if(${var1} -eq 'test var'){
           echo 'var1 equals'
@@ -26,7 +26,7 @@ pipeline {
             Write-Host "Node 10 detected...Try nvm use";
             exit 1;
         }
-        '''
+        """
         
         input 'test' 
         
