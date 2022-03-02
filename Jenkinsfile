@@ -6,6 +6,9 @@ pipeline {
     stage('SSH') {
       steps {
         powershell  '''
+        echo "${BRANCH_NAME}"
+        echo ${WORKSPACE}
+        
         if((node -v).StartsWith("v10")){
             Write-Host "Node 10 detected...Try nvm use";
             exit 1;
