@@ -12,7 +12,7 @@ pipeline {
     stage('First'){
       steps{
         powershell '''
-        cmd /c "exit 5"
+        cmd /c "exit 0"
         echo $LASTEXITCODE 
         echo $?
         
