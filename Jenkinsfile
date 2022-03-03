@@ -40,6 +40,9 @@ pipeline {
         echo \$LASTEXITCODE
         echo '10'
         echo '\$LASTEXITCODE'
+        echo '11'
+        echo $?
+        echo $error
         '''
         
         /*
