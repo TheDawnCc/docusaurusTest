@@ -9,7 +9,7 @@ pipeline {
   }
   
   stages {
-    stage('First') {
+    stage('First'){
       steps{
         powershell '''
         if ((node -v).StartsWith("v10")) {
@@ -21,6 +21,9 @@ pipeline {
         }
         '''
       }
+    }
+    
+    stage('Second') {
       steps {
         /*
         echo "${env.BRANCH_NAME}"
