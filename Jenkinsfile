@@ -20,9 +20,13 @@ pipeline {
         */
         
         powershell '''
+        echo '1'
         echo ${env:var1}
+        echo '2'
         echo "${env:var1}"
+        echo '3'
         echo $var1
+        echo '4'
         echo "$var1"
         '''
         
