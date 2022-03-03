@@ -28,6 +28,11 @@ pipeline {
         echo $var1
         echo '4'
         echo "$var1"
+        echo '5'
+        echo $LASTEXITCODE
+        echo '6'
+        echo "$LASTEXITCODE"
+        
         '''
         
         /*
