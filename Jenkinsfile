@@ -31,6 +31,8 @@ pipeline {
         
         git describe --exact-match
         
+        echo "test lastexitcode"
+        
         echo "$LASTEXITCODE"
         echo "${LASTEXITCODE}"
         echo $LASTEXITCODE
