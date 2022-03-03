@@ -40,7 +40,7 @@ pipeline {
           }
         }
         
-        if(("${environment)" -eq "stage") -and $LASTEXITCODE -ne 0){
+        if(("${environment}" -eq "stage") -and $LASTEXITCODE -ne 0){
           Write-Host "No tags detected...abort"
           exit $LASTEXITCODE 
         }
