@@ -18,6 +18,8 @@ pipeline {
         echo "${env.environment}"
         powershell  """
         Write-Host "test this"
+        echo "${env.var1}"
+        echo "${env.environment}"
         echo "hello world"
         if("${var1}" -eq 'test var'){
           echo 'var1 equals'
