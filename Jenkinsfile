@@ -28,11 +28,11 @@ pipeline {
         
         powershell '''
         
-        echo "${env.BRANCH_NAME}"
-        echo "${env.WORKSPACE}"
-        echo "${var1}"
-        echo "${env.var1}"
-        echo "${env.environment}"
+        echo "${env:BRANCH_NAME}"
+        echo "${env:WORKSPACE}"
+        echo "${env:var1}"
+        echo "${env:var1}"
+        echo "${env:environment}"
         
         echo '1'
         echo ${env:var1}
