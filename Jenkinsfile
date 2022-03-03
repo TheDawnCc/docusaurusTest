@@ -5,6 +5,7 @@ pipeline {
   
   environment {
     var1 = 'test var'
+    environment = 'dev'
   }
   
   stages {
@@ -26,6 +27,22 @@ pipeline {
         if((node -v).StartsWith("v10")){
             Write-Host "Node 10 detected...Try nvm use";
             exit 1;
+        }
+        
+        git describe --exact-match
+        
+        if("${environment}" -eq "qa"){
+          if($LASTEXITCODE -eq 128){
+            exit 0
+          }else{
+            Write-Host "Zero updates...abort"
+            exit 1
+          }
+        }
+        
+        if(("${environment)" -eq "stage") -and $LASTEXITCODE -ne 0){
+          Write-Host "No tags detected...abort"
+          exit $LASTEXITCODE 
         }
         """
         
