@@ -25,15 +25,15 @@ pipeline {
     
     stage('Second') {
       steps {
-        /*
+        
+        powershell '''
+        
         echo "${env.BRANCH_NAME}"
         echo "${env.WORKSPACE}"
         echo "${var1}"
         echo "${env.var1}"
         echo "${env.environment}"
-        */
         
-        powershell '''
         echo '1'
         echo ${env:var1}
         echo '2'
