@@ -16,6 +16,9 @@ pipeline {
         echo $LASTEXITCODE 
         echo $?
         
+        echo ${env:WORKSPACE}
+        echo ${env:BRANCH_NAME}
+        
         '''
       }
     }
