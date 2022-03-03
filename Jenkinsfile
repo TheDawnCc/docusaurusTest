@@ -24,10 +24,14 @@ pipeline {
         echo ${env:var1}
         echo '2'
         echo "${env:var1}"
+        
         echo '3'
-        echo $var1
-        echo '4'
-        echo "$var1"
+        if($LASTEXITCODE -eq 0){
+          echo 'lastexitcode = 0'
+        }else{
+          echo 'lastexitcode != 0'
+        }
+        
         echo '5'
         echo $LASTEXITCODE
         echo '6'
@@ -36,10 +40,7 @@ pipeline {
         echo ${LASTEXITCODE}
         echo '8'
         echo \${LASTEXITCODE}
-        echo '9'
-        echo \$LASTEXITCODE
-        echo '10'
-        echo '\$LASTEXITCODE'
+        
         echo '11'
         echo $?
         echo '12'
