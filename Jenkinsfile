@@ -12,7 +12,7 @@ pipeline {
     stage('First'){
       steps{
         powershell '''
-        cmd /c "exit 128"
+        cmd /c "exit 0"
         
         '''
       }
