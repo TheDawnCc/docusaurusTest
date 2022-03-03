@@ -29,7 +29,7 @@ pipeline {
         if($LASTEXITCODE -eq 0){
           echo 'lastexitcode = 0'
         }
-        else if($LASTEXITCODE -eq $null){
+        elseif($LASTEXITCODE -eq $null){
           echoo 'lastexitcode = null'
         }
         else{
