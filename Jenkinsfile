@@ -34,6 +34,9 @@ pipeline {
         
         echo '5'
         echo $LASTEXITCODE
+        Write-Output $LASTEXITCODE
+        Write-Host $LASTEXITCODE
+        
         echo '6'
         echo "$LASTEXITCODE"
         echo '7'
