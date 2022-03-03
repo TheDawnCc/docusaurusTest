@@ -25,6 +25,8 @@ pipeline {
         echo '2'
         echo "${env:var1}"
         
+        throw 'test error'
+        
         echo '3'
         if($LASTEXITCODE -eq 0){
           echo 'lastexitcode = 0'
