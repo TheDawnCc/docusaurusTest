@@ -16,6 +16,7 @@ pipeline {
         echo "${var1}"
         echo "${env.var1}"
         echo "${env.environment}"
+        
         powershell  """
         Write-Host "test this"
         echo "${env.var1}"
@@ -36,10 +37,7 @@ pipeline {
         git describe --exact-match
         
         echo "test lastexitcode"
-        
-        #echo "$LASTEXITCODE"
-        #echo "${LASTEXITCODE}"
-        #echo $LASTEXITCODE
+       
         
         """
         /*
