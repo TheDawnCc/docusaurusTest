@@ -17,7 +17,7 @@ pipeline {
         echo "${env.var1}"
         echo "${env.environment}"
         
-        powershell  """
+        powershell  '''
         Write-Host "test this"
         echo "${env.var1}"
         echo "${env.environment}"
@@ -39,7 +39,7 @@ pipeline {
         echo "test lastexitcode"
        
         
-        """
+        '''
         /*
         if("${environment}" -eq "qa"){
           if($LASTEXITCODE -eq 128){
