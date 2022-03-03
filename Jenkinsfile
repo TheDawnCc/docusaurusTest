@@ -42,6 +42,7 @@ pipeline {
         echo '\$LASTEXITCODE'
         echo '11'
         echo $?
+        echo '12'
         echo $error
         '''
         
@@ -88,8 +89,7 @@ pipeline {
           exit \$LASTEXITCODE 
         }
         */
-        
-        input 'test' 
+    
         
         /*
         powershell 'npm install'
