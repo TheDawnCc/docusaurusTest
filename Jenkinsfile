@@ -31,6 +31,10 @@ pipeline {
         
         git describe --exact-match
         
+        echo "$LASTEXITCODE"
+        echo "${LASTEXITCODE}"
+        echo $LASTEXITCODE
+        
         if("${environment}" -eq "qa"){
           if($LASTEXITCODE -eq 128){
             exit 0
