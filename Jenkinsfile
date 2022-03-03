@@ -14,6 +14,8 @@ pipeline {
         echo "${env.BRANCH_NAME}"
         echo "${env.WORKSPACE}"
         echo "${var1}"
+        echo "${env.var1}"
+        echo "${env.environment}"
         powershell  """
         Write-Host "test this"
         echo "hello world"
