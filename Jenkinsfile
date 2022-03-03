@@ -37,9 +37,9 @@ pipeline {
         
         echo "test lastexitcode"
         
-        echo "$LASTEXITCODE"
-        echo "${LASTEXITCODE}"
-        echo $LASTEXITCODE
+        #echo "$LASTEXITCODE"
+        #echo "${LASTEXITCODE}"
+        #echo $LASTEXITCODE
         
         """
         /*
