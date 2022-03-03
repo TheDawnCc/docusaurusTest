@@ -19,6 +19,7 @@ pipeline {
         
         powershell  '''
         Write-Host "test this"
+        echo $LASTEXITCODE
         echo "${env.var1}"
         echo "${env.environment}"
         echo "hello world"
