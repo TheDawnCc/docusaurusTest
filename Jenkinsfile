@@ -12,13 +12,8 @@ pipeline {
     stage('First'){
       steps{
         powershell '''
-        if ((node -v).StartsWith("v10")) {
-          Write-Host "Node 10 detected...Try nvm use";
-          exit 1;
-        }
-        else{
-          exit 0;
-        }
+        cmd /c "exit 128"
+        
         '''
       }
     }
