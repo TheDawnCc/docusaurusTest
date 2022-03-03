@@ -66,6 +66,15 @@ pipeline {
         echo $?
         echo '12'
         echo $error
+        
+        echo '13'
+        cmd /c "exit 5"
+        echo $?
+        echo $LASTEXITCODE 
+        echo '14'
+        cmd /c "exit 0"
+        echo $?
+        echo $LASTEXITCODE
         '''
         
         /*
