@@ -36,7 +36,10 @@ pipeline {
         echo ${LASTEXITCODE}
         echo '8'
         echo \${LASTEXITCODE}
-       
+        echo '9'
+        echo \$LASTEXITCODE
+        echo '10'
+        echo '\$LASTEXITCODE'
         '''
         
         /*
