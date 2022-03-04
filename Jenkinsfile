@@ -17,7 +17,7 @@ pipeline {
         echo $type
         
         powershell '''
-        echo ${env:var1}
+        echo "${env:var1}"
         echo ${env:type}
         '''
       }
