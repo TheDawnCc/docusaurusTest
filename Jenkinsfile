@@ -13,6 +13,8 @@ pipeline {
   stages {
     stage('var example') {
       steps{
+        echo ${var1}
+        echo ${type}
         
         powershell '''
         echo ${env:var1}
