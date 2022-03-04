@@ -17,6 +17,26 @@ pipeline {
         echo "${type}"
         echo "${env.BRANCH_NAME}"
         echo "${env.WORKSPACE}"
+        echo "${env.BRANCH_IS_PRIMARY}"
+        echo "${env.CHANGE_ID}"
+        echo "${env.CHANGE_TITLE}"
+        echo "${env.CHANGE_AUTHOR}"
+        echo "${env.CHANGE_AUTHOR_EMAIL}"
+        echo "${env.CHANGE_BRANCH}"
+        echo "${env.CHANGE_FORK}"
+        echo "${env.TAG_NAME}"
+        echo "${env.TAG_DATE}"
+        echo "${env.NODE_NAME}"
+        echo "${env.NODE_LABELS}"
+        echo "${env.WORKSPACE_TMP}"
+        echo "${env.JENKINS_HOME}"
+        echo "${env.GIT_COMMIT}"
+        echo "${env.GIT_BRANCH}"
+        echo "${env.GIT_LOCAL_BRANCH}"
+        echo "${env.GIT_CHECKOUT_DIR}"
+        echo "${env.GIT_AUTHOR_NAME}"
+        echo "${env.GIT_COMMITTER_EMAIL}"
+        echo "${env.GIT_AUTHOR_EMAIL}"
         
         powershell '''
         echo ${env:var1}
@@ -116,9 +136,7 @@ pipeline {
             Write-Host "Node 10 detected...Try nvm use";
             exit 1;
         }
-        
-        git describe --exact-match
-        
+            
         echo "test lastexitcode"
        
         if("${environment}" -eq "qa"){
@@ -135,12 +153,7 @@ pipeline {
           exit $LASTEXITCODE 
         }
         
-        '''
-        
-
-        
-    
-        
+        '''   
         
         powershell 'npm install'
         
