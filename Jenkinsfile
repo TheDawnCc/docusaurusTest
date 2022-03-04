@@ -97,7 +97,7 @@ pipeline {
         echo $LASTEXITCODE
         '''
         
-        /*
+        
         powershell  """
         Write-Host "test this"
         echo \${LASTEXITCODE}
@@ -139,22 +139,22 @@ pipeline {
           Write-Host "No tags detected...abort"
           exit \$LASTEXITCODE 
         }
-        */
+        
     
         
-        /*
+        
         powershell 'npm install'
-        */
+        
       }
     }
 
-    /*
+    
     stage('Remote') {
       steps {
         powershell 'npm run build'
       }
     }
-    */
+    
 
   }
 }
