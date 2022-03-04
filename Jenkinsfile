@@ -14,8 +14,6 @@ pipeline {
     stage('var example') {
       steps{
         
-        echo $type
-        
         powershell '''
         echo ${env:var1}
         echo ${env:type}
