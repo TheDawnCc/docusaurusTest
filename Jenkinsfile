@@ -100,8 +100,8 @@ pipeline {
         
         powershell  """
         Write-Host "test this"
-        echo \${LASTEXITCODE}
-        if(\${LASTEXITCODE} -eq 0){
+        echo ${LASTEXITCODE}
+        if(${LASTEXITCODE} -eq 0){
           echo 'lastexitcode value is 0'
         }
         echo "${env.var1}"
@@ -134,7 +134,7 @@ pipeline {
         
         if(("${environment}" -eq "stage") -and \$LASTEXITCODE -ne 0){
           Write-Host "No tags detected...abort"
-          exit \$LASTEXITCODE 
+          exit $LASTEXITCODE 
         }
         
         """
