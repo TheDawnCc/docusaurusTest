@@ -96,7 +96,7 @@ pipeline {
         '''
         
         
-        powershell  """
+        powershell  '''
         Write-Host "test this"
         echo $LASTEXITCODE
         if($LASTEXITCODE -eq 0){
@@ -135,7 +135,7 @@ pipeline {
           exit $LASTEXITCODE 
         }
         
-        """
+        '''
         
 
         
