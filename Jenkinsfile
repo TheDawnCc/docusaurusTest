@@ -123,9 +123,6 @@ pipeline {
         
         echo "test lastexitcode"
        
-        
-        """
-        
         if("${environment}" -eq "qa"){
           if($LASTEXITCODE -eq 128){
             exit 0
@@ -139,6 +136,10 @@ pipeline {
           Write-Host "No tags detected...abort"
           exit \$LASTEXITCODE 
         }
+        
+        """
+        
+
         
     
         
