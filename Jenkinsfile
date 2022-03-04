@@ -15,10 +15,16 @@ pipeline {
       steps{
         echo "${var1}"
         echo "${type}"
+        echo "${env.BRANCH_NAME}"
+        echo "${env.WORKSPACE}"
         
         powershell '''
         echo ${env:var1}
         echo ${env:type}
+        
+        $a = 1
+        $b = 3
+        echo 'a+b = {${a}+${b}}'
         '''
       }
     }
