@@ -6,9 +6,23 @@ pipeline {
   environment {
     var1 = 'test var'
     environment = 'dev'
+    
+    type = 'micro'
   }
   
   stages {
+    stage('var example') {
+      steps{
+        echo $var1
+        echo $type
+        
+        powershell '''
+        echo $var1
+        echo ${env:type}
+        '''
+      }
+    }
+    
     stage('First'){
       steps{
         powershell '''
