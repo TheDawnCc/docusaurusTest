@@ -171,7 +171,7 @@ pipeline {
   
   post {
     always {
-      archiveArtifacts artifacts: 'uild/libs/**/*.jar',fingerprint: true
+      archiveArtifacts artifacts: 'build/assets/**/*.js',fingerprint: true
       junit 'build/reports/**/*.xml'
     }
   }
