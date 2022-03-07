@@ -13,6 +13,7 @@ pipeline {
   stages {
     stage('var example') {
       steps{
+        echo "${env.SVN_REVISION}"
         echo "${var1}"
         echo "${type}"
         echo "${env.BRANCH_NAME}"
