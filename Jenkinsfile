@@ -171,8 +171,8 @@ pipeline {
   
   post {
     always {
-      archiveArtifacts artifacts: 'build/assets/**/*.js',fingerprint: true
-      junit 'build/reports/**/*.xml'
+      archiveArtifacts artifacts: 'build/',fingerprint: true
+      junit 'test-results.xml'
     }
   }
 }
