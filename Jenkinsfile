@@ -167,7 +167,12 @@ pipeline {
         powershell 'npm run build'
       }
     }
-    
-
+  }
+  
+  post {
+    always {
+      archiveArtifacts artifacts: 'uild/libs/**/*.jar',fingerprint: true
+      junit 'build/reports/**/*.xml'
+    }
   }
 }
