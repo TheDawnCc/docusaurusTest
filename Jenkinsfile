@@ -154,11 +154,17 @@ pipeline {
           exit $LASTEXITCODE 
         }
         
-        '''   
-        
-        powershell 'npm install'
-        
+        '''           
       }
+    }
+    
+    stage('install&test'){
+      steps {
+        powershell '''
+        npm install
+        npm test
+        '''
+      } 
     }
 
     
