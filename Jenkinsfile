@@ -18,26 +18,6 @@ pipeline {
         echo "${type}"
         echo "${env.BRANCH_NAME}"
         echo "${env.WORKSPACE}"
-        echo "${env.BRANCH_IS_PRIMARY}"
-        echo "${env.CHANGE_ID}"
-        echo "${env.CHANGE_TITLE}"
-        echo "${env.CHANGE_AUTHOR}"
-        echo "${env.CHANGE_AUTHOR_EMAIL}"
-        echo "${env.CHANGE_BRANCH}"
-        echo "${env.CHANGE_FORK}"
-        echo "${env.TAG_NAME}"
-        echo "${env.TAG_DATE}"
-        echo "${env.NODE_NAME}"
-        echo "${env.NODE_LABELS}"
-        echo "${env.WORKSPACE_TMP}"
-        echo "${env.JENKINS_HOME}"
-        echo "${env.GIT_COMMIT}"
-        echo "${env.GIT_BRANCH}"
-        echo "${env.GIT_LOCAL_BRANCH}"
-        echo "${env.GIT_CHECKOUT_DIR}"
-        echo "${env.GIT_AUTHOR_NAME}"
-        echo "${env.GIT_COMMITTER_EMAIL}"
-        echo "${env.GIT_AUTHOR_EMAIL}"
         
         powershell '''
         echo ${env:var1}
@@ -90,30 +70,6 @@ pipeline {
         else{
           echo 'lastexitcode != 0'
         }
-        
-        echo '5'
-        echo $LASTEXITCODE
-        Write-Output $LASTEXITCODE
-        Write-Host $LASTEXITCODE
-        
-        echo '6'
-        echo "$LASTEXITCODE"
-        echo '7'
-        echo ${LASTEXITCODE}
-        
-        echo '11'
-        echo $?
-        echo '12'
-        echo $error
-        
-        echo '13'
-        cmd /c "exit 5"
-        echo $?
-        echo $LASTEXITCODE 
-        echo '14'
-        cmd /c "exit 0"
-        echo $?
-        echo $LASTEXITCODE
         '''
         
         
@@ -176,7 +132,7 @@ pipeline {
   
   post {
     always {
-      archiveArtifacts artifacts: 'build/',fingerprint: true
+      archiveArtifacts artifacts: 'build/',fingerprint: true, allowEmptyArchive: true
     }
   }
 }
